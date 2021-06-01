@@ -25,7 +25,9 @@ public class Book
 	    private String author;
 	    private int price;
 	    private boolean available;
-
+	    
+	    
+	    //many to one relation between book and publisher
 	    @ManyToOne(cascade = CascadeType.MERGE)
 	   // @JoinColumn(name = "publisher_id", referencedColumnName = "publisher_id")
 	    @JsonIgnoreProperties({"publishedBooks"})
