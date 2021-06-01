@@ -13,8 +13,9 @@ import javax.persistence.ManyToOne;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
-public class Book {
-	  @JsonIgnore
+public class Book 
+{
+	    @JsonIgnore
 	    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "booksEnrolled")
 	    List<Library> librariesInfo;
 	    @Id
