@@ -1,5 +1,8 @@
 package com.redshift.LibrarApplicationn.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,7 +10,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 public class Member {
@@ -20,6 +25,22 @@ public class Member {
      @JoinColumn(name="library_id", referencedColumnName ="library_id")
      @JsonIgnoreProperties({"membersEnrolled"})
      private Library library;
+     
+     
+     @OneToMany(mappedBy="member",cascade = CascadeType.ALL)
+     @JsonIgnore
+     private List<IssuedBooks> issuedList=new ArrayList<IssuedBooks>();   
+	
+	
+
+	public List<IssuedBooks> getIssuedList() {
+		return issuedList;
+	}
+
+	public void setIssuedList(List<IssuedBooks> issuedList) {
+		this.issuedList = issuedList;
+	}
+
 	public int getMember_id() {
 		return member_id;
 	}
@@ -51,6 +72,9 @@ public class Member {
 	public void setLibrary(Library library) {
 		this.library = library;
 	}
-	
+	  public void addIssuedBooks(IssuedBooks issuedBooks)
+      {
+      	this.issuedList.add(issuedBooks);
+      }
 	
 }

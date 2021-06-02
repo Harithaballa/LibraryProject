@@ -1,14 +1,17 @@
 package com.redshift.LibrarApplicationn.Model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -25,15 +28,44 @@ public class Book
 	    private String author;
 	    private int price;
 	    private boolean available;
-	    
-	    
-	    //many to one relation between book and publisher
 	    @ManyToOne(cascade = CascadeType.MERGE)
 	   // @JoinColumn(name = "publisher_id", referencedColumnName = "publisher_id")
 	    @JsonIgnoreProperties({"publishedBooks"})
 	    private Publisher publisher;
+       
+		@OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
+		@JsonIgnore
+	    private List<IssuedBooks> issuedList=new ArrayList<IssuedBooks>();
+		@Column(name="total_no_of_books")
+		private int totalNoOfBooks;
+		@Column(name="no_of_issued_books")
+        private int NoOfIssuedBooks;
+        public int getTotalNoOfBooks() {
+			return totalNoOfBooks;
+		}
 
-	    public int getBookid() {
+		public void setTotalNoOfBooks(int totalNoOfBooks) {
+			this.totalNoOfBooks = totalNoOfBooks;
+		}
+
+		public int getNoOfIssuedBooks() {
+			return NoOfIssuedBooks;
+		}
+
+		public void setNoOfIssuedBooks(int noOfIssuedBooks) {
+			NoOfIssuedBooks = noOfIssuedBooks;
+		}
+
+		
+		public List<IssuedBooks> getIssuedList() {
+			return issuedList;
+		}
+
+		public void setIssuedList(List<IssuedBooks> issuedList) {
+			this.issuedList = issuedList;
+		}
+
+		public int getBookid() {
 	        return bookid;
 	    }
 
@@ -88,7 +120,10 @@ public class Book
 	    public void setLibrariesInfo(List<Library> librariesInfo) {
 	        this.librariesInfo = librariesInfo;
 	    }
-
+        public void addIssuedBooks(IssuedBooks issuedBooks)
+        {
+        	this.issuedList.add(issuedBooks);
+        }
 
 	/*  @Id
 	  @GeneratedValue

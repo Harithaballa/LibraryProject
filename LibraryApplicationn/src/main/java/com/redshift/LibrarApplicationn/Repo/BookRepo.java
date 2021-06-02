@@ -19,13 +19,13 @@ public interface BookRepo extends JpaRepository<Book,Integer>,BookRepoCustom
 	@Query(value="select bookname from book  where available=true",nativeQuery =true )
     public List<Bookname> availableBooks();
 	
-	@Query(value="select * from book  where price<:price",nativeQuery =true)
-	public List<Book> priceLessThan(@Param("price") int price);
+//	@Query(value="select * from book  where price<:price",nativeQuery =true)
+	//public List<Book> priceLessThan(@Param("price") int price);
 	
-	@Query(value="select * from book  where price between :price1 and :price2",nativeQuery =true)
-	public List<Book> priceInBetwenBooks(@Param("price1") int price1,@Param("price2") int price2);
+//	@Query(value="select * from book  where price between :price1 and :price2",nativeQuery =true)
+	//public List<Book> priceInBetwenBooks(@Param("price1") int price1,@Param("price2") int price2);
 	
-	@Query(value="select publisher_publisher_id,count(*) from book  group by publisher_publisher_id",nativeQuery =true)
-	public List<Object[]> getNoOfBooksForPublisher();
+	//@Query(value="select publisher_publisher_id,count(*) from book  group by publisher_publisher_id",nativeQuery =true)
+	//public List<Object[]> getNoOfBooksForPublisher();
 	
 }

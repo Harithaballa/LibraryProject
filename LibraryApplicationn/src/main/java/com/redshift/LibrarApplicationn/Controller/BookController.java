@@ -77,11 +77,11 @@ public class BookController {
 			return bookRepo.priceInBetwenBooks(price1,price2);
 		}
 		
-		@GetMapping("/getNoOfBooksForPublisher")
+		/*@GetMapping("/getNoOfBooksForPublisher")
 		public List<Object[]> getNoOfBooksForPublisher()
 		{
 		  return bookRepo.getNoOfBooksForPublisher();
-	    }
+	    }*/
 		
 		
 

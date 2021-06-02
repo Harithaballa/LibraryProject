@@ -5,13 +5,15 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Address {
+public class Address 
+{
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO )
 	@Column(name="address_id")
     private int address_id;
     private String location;
-    @OneToOne(mappedBy="address",cascade=CascadeType.ALL)
+    @OneToOne(cascade=CascadeType.ALL,orphanRemoval = true)
+    @JoinColumn(name = "library_id", referencedColumnName = "library_id")
     @JsonIgnore
     private Library lib;
 public int getAddress_id() 

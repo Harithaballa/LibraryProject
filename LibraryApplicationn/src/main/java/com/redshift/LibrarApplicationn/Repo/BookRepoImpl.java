@@ -2,14 +2,27 @@ package com.redshift.LibrarApplicationn.Repo;
 
 import java.util.List;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.redshift.LibrarApplicationn.Model.Book;
 public class BookRepoImpl implements BookRepoCustom{
-    @Autowired
+	@Autowired
+	DataSource  dataSource;
+	
+	@Bean
+	public JdbcTemplate jdbcTemplate()
+	{
+		JdbcTemplate jdbcTemplate=new JdbcTemplate();
+		jdbcTemplate.setDataSource(dataSource);
+		return jdbcTemplate;
+	}
 	JdbcTemplate jdbcTemplate;
+    
 	 static RowMapper<Book> rowMapper=(rs,rownum)->{
 		Book book=new Book();
 		book.setBookid(rs.getInt("bookid"));
@@ -20,7 +33,8 @@ public class BookRepoImpl implements BookRepoCustom{
 	};
 	@Override
 	public List<Book> priceLessThan(int price) {
-		String query="select * from book  where price<:price";
+		jdbcTemplate=jdbcTemplate();
+		String query="select * from book  where price<"+price;
 		
 		return jdbcTemplate.query(query,rowMapper);
 	
@@ -30,30 +44,33 @@ public class BookRepoImpl implements BookRepoCustom{
 	public List<Book> priceInBetwenBooks(int price1, int price2) {
 		
 		// TODO Auto-generated method stub
-        String query="select b from book  b where b.price between :price1 and :price2";
+		jdbcTemplate=jdbcTemplate();
+        String query="select * from book where price between "+price1 +" and "+price2;
+        
 		return jdbcTemplate.query(query,rowMapper);
 	}
 
-	@Override
-	public List<Bookname> availableBooks() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 	/*@Override
 	public List<Bookname> availableBooks() {
 		// TODO Auto-generated method stub
-		String query="select bookname from book  where available=true";
-		/*RowMapper<Bookname> rowMapper=(rs,rownum)->
+		return null;
+	}*/
+	
+	
+	@Override
+	public List<Bookname> availableBooks() {
+		// TODO Auto-generated method stub
+		String query="select bookname from book  where available= true";
+		RowMapper<Bookname> rowMapper=(rs,rownum)->
 		{
 			Bookname bookname= new Bookname();
 			bookname.setBookname(rs.getString(1));
 			return bookname;
 		};
 		
-		return null;// jdbcTemplate.query(query, rowMapper);
-	}*/
+		return jdbcTemplate.query(query, rowMapper);
+	}
+	
 
 	
 	

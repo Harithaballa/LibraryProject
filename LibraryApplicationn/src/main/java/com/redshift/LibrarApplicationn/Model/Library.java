@@ -22,8 +22,8 @@ public class Library {
     @Column(name = "library_id")
     private int id;
     private String name;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "address_id")
+    @OneToOne(mappedBy="lib" ,cascade = CascadeType.ALL)
+   
     private Address address;
     
     @OneToMany(mappedBy = "library", cascade = CascadeType.MERGE)
