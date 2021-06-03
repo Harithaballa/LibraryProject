@@ -6,9 +6,11 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -29,11 +31,11 @@ public class Book
 	    private int price;
 	    private boolean available;
 	    @ManyToOne(cascade = CascadeType.MERGE)
-	   // @JoinColumn(name = "publisher_id", referencedColumnName = "publisher_id")
+	    @JoinColumn(name = "publisher_id", referencedColumnName = "publisher_id")
 	    @JsonIgnoreProperties({"publishedBooks"})
 	    private Publisher publisher;
        
-		@OneToMany(mappedBy = "book",cascade = CascadeType.ALL)
+		@OneToMany(mappedBy = "book",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 		@JsonIgnore
 	    private List<IssuedBooks> issuedList=new ArrayList<IssuedBooks>();
 		@Column(name="total_no_of_books")

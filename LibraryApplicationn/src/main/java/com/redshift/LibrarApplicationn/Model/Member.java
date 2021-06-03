@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,26 +13,31 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import org.apache.log4j.Logger;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 public class Member {
+	
+	
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO )
      private int member_id;
+	 
      private String member_name;
      private String expirydate;
-     @ManyToOne(targetEntity = Library.class,cascade=CascadeType.ALL)
+     
+     @ManyToOne(cascade=CascadeType.MERGE,fetch = FetchType.EAGER)
      @JoinColumn(name="library_id", referencedColumnName ="library_id")
-     @JsonIgnoreProperties({"membersEnrolled"})
-     private Library library;
+     @JsonIgnore//Properties({"membersEnrolled"})
+    private Library library;
      
-     
-     @OneToMany(mappedBy="member",cascade = CascadeType.ALL)
+     @OneToMany(mappedBy="member",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
      @JsonIgnore
      private List<IssuedBooks> issuedList=new ArrayList<IssuedBooks>();   
-	
-	
+     
+ 	private static Logger logger=Logger.getLogger(Member.class);
 
 	public List<IssuedBooks> getIssuedList() {
 		return issuedList;
@@ -66,10 +72,13 @@ public class Member {
 	}
 
 	public Library getLibrary() {
+		logger.debug("getting library info");
 		return library;
 	}
 
 	public void setLibrary(Library library) {
+		if(library!=null)
+		     logger.debug("library is added to member");
 		this.library = library;
 	}
 	  public void addIssuedBooks(IssuedBooks issuedBooks)

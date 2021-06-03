@@ -1,7 +1,7 @@
 package com.redshift.LibrarApplicationn.Controller;
-
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,6 +19,7 @@ import com.redshift.LibrarApplicationn.Repo.MemberRepo;
 import com.redshift.LibrarApplicationn.Service.LibraryService;
 @RestController
 public class LibraryController {
+	private static Logger logger=Logger.getLogger(LibraryController.class);
 	@Autowired
 	LibraryService service;
 	@Autowired
@@ -30,16 +31,19 @@ public class LibraryController {
 	@GetMapping("/getLibraryDetails")
 	 public List<Library> getAll()
     {
+		logger.info("getting details from library table");	
    	     return repo.findAll();
     }
 	@PutMapping("/createLibrary")
 	public Library createLibrary(@RequestBody Library library)
 	{ 
+		logger.debug("creating library table");
 		return repo.save(library);
 	}
 	@GetMapping("/getId/{id}")
 	public Library getLibraryByName(@PathVariable String id )
 	{
+		logger.warn("ur getting library name");
 		return repo.findByName(id);
 	}
 	

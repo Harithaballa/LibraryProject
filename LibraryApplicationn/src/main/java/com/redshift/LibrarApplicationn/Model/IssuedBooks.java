@@ -21,8 +21,8 @@ public class IssuedBooks {
 public void setIssuedBooksId(int issuedBooksId) {
 	this.issuedBooksId = issuedBooksId;
 }
-
-   @ManyToOne(cascade = CascadeType.MERGE)
+ 
+@ManyToOne(cascade = CascadeType.MERGE)
    @JoinColumn(name="book_id")
    private Book book;
    

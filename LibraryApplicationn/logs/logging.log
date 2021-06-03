@@ -1,0 +1,147 @@
+2021-06-03 12:02:48 DEBUG com.redshift.LibrarApplicationn.Model.Library:84 - members are being added
+2021-06-03 12:02:48 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 12:02:48 DEBUG com.redshift.LibrarApplicationn.Model.Library:45 - adding child
+2021-06-03 12:02:48 DEBUG com.redshift.LibrarApplicationn.Model.Member:80 - library is added to member
+2021-06-03 12:02:48 DEBUG com.redshift.LibrarApplicationn.Model.Member:80 - library is added to member
+2021-06-03 12:02:50 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:06:07 DEBUG com.redshift.LibrarApplicationn.Model.Library:86 - members are being added
+2021-06-03 12:06:07 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 12:06:07 DEBUG com.redshift.LibrarApplicationn.Model.Library:45 - adding child
+2021-06-03 12:06:07 DEBUG com.redshift.LibrarApplicationn.Model.Member:80 - library is added to member
+2021-06-03 12:06:07 DEBUG com.redshift.LibrarApplicationn.Model.Member:80 - library is added to member
+2021-06-03 12:06:08 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:12:08 DEBUG com.redshift.LibrarApplicationn.Model.Library:86 - members are being added
+2021-06-03 12:12:08 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 12:12:08 DEBUG com.redshift.LibrarApplicationn.Model.Library:45 - adding child
+2021-06-03 12:12:08 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:12:08 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:12:09 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:24:55 DEBUG com.redshift.LibrarApplicationn.Model.Library:86 - members are being added
+2021-06-03 12:24:55 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 12:24:55 DEBUG com.redshift.LibrarApplicationn.Model.Library:45 - adding child
+2021-06-03 12:24:55 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:24:55 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:24:56 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:25:37 DEBUG com.redshift.LibrarApplicationn.Model.Library:86 - members are being added
+2021-06-03 12:25:37 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 12:25:37 DEBUG com.redshift.LibrarApplicationn.Model.Library:45 - adding child
+2021-06-03 12:25:37 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:25:37 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:25:37 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:26:11 DEBUG com.redshift.LibrarApplicationn.Model.Library:86 - members are being added
+2021-06-03 12:26:11 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 12:26:11 DEBUG com.redshift.LibrarApplicationn.Model.Library:45 - adding child
+2021-06-03 12:26:11 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:26:11 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 12:26:11 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:52:53 INFO com.redshift.LibrarApplicationn.Controller.LibraryController:34 - getting details from library table
+2021-06-03 12:52:53 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:52:53 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:52:53 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:52:53 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:52:53 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 12:52:54 DEBUG com.redshift.LibrarApplicationn.Model.Library:78 - members are being gett
+2021-06-03 14:56:24 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:56:25 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:56:30 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:56:35 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:56:40 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:56:45 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:56:50 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:56:55 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:00 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:05 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:10 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:15 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:20 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:25 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:31 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:36 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:41 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:41 INFO com.redshift.LibrarApplicationn.Model.Library:48 - Book is not available
+2021-06-03 14:57:46 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:51 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:57:56 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:01 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:06 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:11 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:16 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:21 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:26 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:31 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:36 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:41 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:46 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:51 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:58:56 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:01 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:06 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:11 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:16 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:21 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:26 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:31 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:36 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:41 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:46 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:51 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 14:59:56 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:00:01 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:00:06 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:00:11 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:00:24 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:02:05 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:04:25 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:16:03 INFO com.redshift.LibrarApplicationn.Model.Library:88 - init method is executing
+2021-06-03 15:17:15 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:17 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:24 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:30 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:35 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:40 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:45 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:51 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:17:56 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:01 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:06 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:11 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:16 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:22 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:27 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:32 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:38 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:43 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:48 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:18:53 INFO com.redshift.LibrarApplicationn.Model.Library:87 - init method is executing
+2021-06-03 15:49:56 INFO com.redshift.LibrarApplicationn.Model.Library:69 - Books is issued
+2021-06-03 15:50:33 INFO com.redshift.LibrarApplicationn.Model.Library:69 - Books is issued
+2021-06-03 15:50:48 INFO com.redshift.LibrarApplicationn.Model.Library:69 - Books is issued
+2021-06-03 15:50:55 INFO com.redshift.LibrarApplicationn.Model.Library:57 - Sorry u have already 2 books
+2021-06-03 15:52:58 INFO com.redshift.LibrarApplicationn.Model.Library:63 - one Book is issued 
+2021-06-03 15:53:06 INFO com.redshift.LibrarApplicationn.Model.Library:41 - Book is not available
+2021-06-03 15:58:01 INFO com.redshift.LibrarApplicationn.Model.Library:41 - Book is not available
+2021-06-03 16:18:28 INFO com.redshift.LibrarApplicationn.Model.Library:69 - Books is issued
+2021-06-03 16:18:44 INFO com.redshift.LibrarApplicationn.Model.Library:69 - Books is issued
+2021-06-03 16:19:00 INFO com.redshift.LibrarApplicationn.Model.Library:69 - Books is issued
+2021-06-03 16:19:15 INFO com.redshift.LibrarApplicationn.Model.Library:57 - Sorry u have already 2 books
+2021-06-03 16:19:45 INFO com.redshift.LibrarApplicationn.Model.Library:63 - one Book is issued 
+2021-06-03 16:19:51 INFO com.redshift.LibrarApplicationn.Model.Library:41 - Book is not available
+2021-06-03 16:19:57 INFO com.redshift.LibrarApplicationn.Model.Library:41 - Book is not available
+2021-06-03 16:30:53 DEBUG com.redshift.LibrarApplicationn.Model.Library:84 - members are being added
+2021-06-03 16:30:53 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 16:30:53 DEBUG com.redshift.LibrarApplicationn.Model.Library:43 - adding child
+2021-06-03 16:30:53 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 16:30:53 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 16:30:54 DEBUG com.redshift.LibrarApplicationn.Model.Library:76 - members are being gett
+2021-06-03 16:32:17 DEBUG com.redshift.LibrarApplicationn.Model.Library:84 - members are being added
+2021-06-03 16:32:17 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 16:32:17 DEBUG com.redshift.LibrarApplicationn.Model.Library:43 - adding child
+2021-06-03 16:32:17 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 16:32:17 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 16:32:18 DEBUG com.redshift.LibrarApplicationn.Model.Library:76 - members are being gett
+2021-06-03 16:33:17 DEBUG com.redshift.LibrarApplicationn.Model.Library:84 - members are being added
+2021-06-03 16:33:17 DEBUG com.redshift.LibrarApplicationn.Controller.LibraryController:40 - creating library table
+2021-06-03 16:33:17 DEBUG com.redshift.LibrarApplicationn.Model.Library:43 - adding child
+2021-06-03 16:33:17 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 16:33:17 DEBUG com.redshift.LibrarApplicationn.Model.Member:81 - library is added to member
+2021-06-03 16:33:18 DEBUG com.redshift.LibrarApplicationn.Model.Library:76 - members are being gett

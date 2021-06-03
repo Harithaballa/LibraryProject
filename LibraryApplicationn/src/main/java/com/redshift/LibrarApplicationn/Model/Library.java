@@ -15,6 +15,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
+
+import org.apache.log4j.Logger;
 @Entity
 public class Library {
     @Id
@@ -23,10 +25,9 @@ public class Library {
     private int id;
     private String name;
     @OneToOne(mappedBy="lib" ,cascade = CascadeType.ALL)
-   
     private Address address;
     
-    @OneToMany(mappedBy = "library", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "library",cascade = CascadeType.ALL)
     private List<Member> membersEnrolled = new ArrayList<>();
 
     @ManyToMany(cascade = CascadeType.MERGE)
@@ -39,10 +40,12 @@ public class Library {
 
     @PrePersist
     public void addChild() {
+    	logger.debug("adding child");
         this.membersEnrolled.forEach(member -> {
             member.setLibrary(this);
         });
     }
+	private static Logger logger=Logger.getLogger(Library.class);
 
     public int getId() {
         return id;
@@ -69,10 +72,16 @@ public class Library {
     }
 
     public List<Member> getMembersEnrolled() {
+    	if(membersEnrolled!=null)
+    		logger.debug("members are being gett");
+    	else
+    	logger.debug("xyz");
         return membersEnrolled;
     }
 
     public void setMembersEnrolled(List<Member> membersEnrolled) {
+    	if(membersEnrolled.get(0)!=null)
+    	      logger.debug("members are being added");
         this.membersEnrolled = membersEnrolled;
     }
 
