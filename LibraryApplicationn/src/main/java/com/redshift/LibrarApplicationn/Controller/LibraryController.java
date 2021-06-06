@@ -13,21 +13,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.redshift.LibrarApplicationn.Model.Book;
 import com.redshift.LibrarApplicationn.Model.Library;
-import com.redshift.LibrarApplicationn.Repo.BookRepo;
 import com.redshift.LibrarApplicationn.Repo.LibraryRepo;
-import com.redshift.LibrarApplicationn.Repo.MemberRepo;
 import com.redshift.LibrarApplicationn.Service.LibraryService;
 @RestController
 public class LibraryController {
 	private static Logger logger=Logger.getLogger(LibraryController.class);
+	
 	@Autowired
 	LibraryService service;
 	@Autowired
 	LibraryRepo repo;
-	@Autowired
-	BookRepo bookrepo;
-	@Autowired
-	MemberRepo memberrepo;
+		
 	@GetMapping("/getLibraryDetails")
 	 public List<Library> getAll()
     {
@@ -53,14 +49,6 @@ public class LibraryController {
 	    repo.deleteById(Integer.parseInt(id));
 	}
 	
-  /*@PostMapping("/addBookToLibrary/{library_id}/{book_id}")
-	public Library addBookToLibary(@PathVariable int library_id,@PathVariable int book_id)
-	{
-		Library lib=repo.findById(library_id).get();
-		Book book=bookrepo.findById(book_id).get();
-        lib.setBooksEnrolled(book);
-		return repo.save(lib);
-	}*/
   @GetMapping("/getBooksInLibrary/{library_id}")
    public List<Book> getBooksInLibrary(@PathVariable int library_id)
     {
@@ -78,15 +66,6 @@ public class LibraryController {
 //	{
 //		return service.getFirstNamesLike(name);
 //	}
-	/*   @PutMapping("/addMember/{library_id}/{member_id}")
-	   public Library addMemberToLibrary(@RequestParam int lib_id,@RequestParam int mem_id)
-	   {
-		   Library library=repo.findById(lib_id).get();
-		   Member member=memberrepo.findById(lib_id).get();
-		   library.membersEnrolled(member);
-		   return repo.save(library);
-
-	   }*/
 	   
 	 @GetMapping("/getAddressValuesofLib/{id}")
 	 public   Object[] getAddressById(@PathVariable int id)
@@ -121,7 +100,7 @@ public class LibraryController {
 	  @GetMapping("/getMembersHavingCount/{count}")
 	  public List<Object[]> getMembersHavingCount(@PathVariable int count)
 	  {
-		  return getMembersHavingCount(count);
+		  return repo.getMembersHavingCount(count);
 	  }
 
 }

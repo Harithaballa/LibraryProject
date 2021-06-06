@@ -23,13 +23,16 @@ public class Book
 	    @JsonIgnore
 	    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "booksEnrolled")
 	    List<Library> librariesInfo;
+	    
 	    @Id
 	    @GeneratedValue(strategy = GenerationType.AUTO)
 	    private int bookid;
+	    
 	    private String bookname;
 	    private String author;
 	    private int price;
 	    private boolean available;
+	    
 	    @ManyToOne(cascade = CascadeType.MERGE)
 	    @JoinColumn(name = "publisher_id", referencedColumnName = "publisher_id")
 	    @JsonIgnoreProperties({"publishedBooks"})
@@ -38,10 +41,13 @@ public class Book
 		@OneToMany(mappedBy = "book",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 		@JsonIgnore
 	    private List<IssuedBooks> issuedList=new ArrayList<IssuedBooks>();
+		
 		@Column(name="total_no_of_books")
 		private int totalNoOfBooks;
+		
 		@Column(name="no_of_issued_books")
         private int NoOfIssuedBooks;
+		
         public int getTotalNoOfBooks() {
 			return totalNoOfBooks;
 		}
@@ -127,64 +133,5 @@ public class Book
         	this.issuedList.add(issuedBooks);
         }
 
-	/*  @Id
-	  @GeneratedValue
-	  private int bookid;
-	  private String bookname;
-	  private String author;
-	
-	  private int price;
-	  private boolean available;
-	  @ManyToOne(cascade = CascadeType.MERGE)
-	//  @JoinColumn(name="publisher_id",referencedColumnName ="publisher_id")
-	  @JsonIgnore
-	  private Publisher publisher;
-	  
-	  public Publisher getPublisher() {
-		return publisher;
-	}
-	public void setPublisher(Publisher publisher) {
-		this.publisher = publisher;
-	}
-	@JsonIgnore
-	  @ManyToMany(mappedBy="booksEnrolled")
-	  List<Library> librariesInfo;
-	  public int getBookid() {
-		return bookid;
-	}
-	public void setBookid(int bookid) {
-		this.bookid = bookid;
-	}
-	public String getBookname() {
-		return bookname;
-	}
-	public void setBookname(String bookname) {
-		this.bookname = bookname;
-	}
-	public String getAuthor() {
-		return author;
-	}
-	public void setAuthor(String author) {
-		this.author = author;
-	}
-	
-	public int getPrice() {
-		return price;
-	}
-	public void setPrice(int price) {
-		this.price = price;
-	}
-	public boolean isAvailable() {
-		return available;
-	}
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
-	public List<Library> getLibrariesInfo() {
-		return librariesInfo;
-	}
-	public void setLibrariesInfo(List<Library> librariesInfo) {
-		this.librariesInfo = librariesInfo;
-	}	*/
 	  
 }

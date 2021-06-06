@@ -29,37 +29,30 @@ public class BookRepoImpl implements BookRepoCustom{
 		book.setBookname(rs.getString("bookname"));
 		book.setAuthor(rs.getString("author"));
 		book.setAvailable(rs.getBoolean("available"));
+		
 		return book;
 	};
+	
 	@Override
-	public List<Book> priceLessThan(int price) {
+	public List<Book> priceLessThan(int price) 
+	{
 		jdbcTemplate=jdbcTemplate();
 		String query="select * from book  where price<"+price;
-		
 		return jdbcTemplate.query(query,rowMapper);
-	
 	}
 	
 	@Override
-	public List<Book> priceInBetwenBooks(int price1, int price2) {
-		
-		// TODO Auto-generated method stub
+	public List<Book> priceInBetwenBooks(int price1, int price2) 
+	{
 		jdbcTemplate=jdbcTemplate();
         String query="select * from book where price between "+price1 +" and "+price2;
         
 		return jdbcTemplate.query(query,rowMapper);
 	}
-
-	/*@Override
-	public List<Bookname> availableBooks() {
-		// TODO Auto-generated method stub
-		return null;
-	}*/
-	
 	
 	@Override
-	public List<Bookname> availableBooks() {
-		// TODO Auto-generated method stub
+	public List<Bookname> availableBooks() 
+	{
 		String query="select bookname from book  where available= true";
 		RowMapper<Bookname> rowMapper=(rs,rownum)->
 		{
@@ -70,9 +63,6 @@ public class BookRepoImpl implements BookRepoCustom{
 		
 		return jdbcTemplate.query(query, rowMapper);
 	}
-	
 
-	
-	
 
 }

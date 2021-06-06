@@ -6,5 +6,4 @@ import com.redshift.LibrarApplicationn.Model.Address;
 
 public interface IAddressDao {
 	public List<Address> getByLocation(String location);
-
 }

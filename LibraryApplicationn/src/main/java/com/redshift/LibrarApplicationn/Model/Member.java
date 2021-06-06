@@ -16,10 +16,8 @@ import javax.persistence.OneToMany;
 import org.apache.log4j.Logger;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
 public class Member {
-	
 	
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO )
@@ -31,7 +29,7 @@ public class Member {
      @ManyToOne(cascade=CascadeType.MERGE,fetch = FetchType.EAGER)
      @JoinColumn(name="library_id", referencedColumnName ="library_id")
      @JsonIgnore//Properties({"membersEnrolled"})
-    private Library library;
+     private Library library;
      
      @OneToMany(mappedBy="member",cascade = CascadeType.ALL,fetch = FetchType.EAGER)
      @JsonIgnore

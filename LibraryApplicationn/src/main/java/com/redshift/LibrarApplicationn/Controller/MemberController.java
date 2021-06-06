@@ -43,9 +43,4 @@ public class MemberController {
 	   repo.deleteById(id);
    }
    
- /*  @GetMapping("/getLibraryInfoOfMember")
-   public Library getLibraryInfoOfMember(@PathVariable int id)
-   {
-	   return repo.getById(id).getLibrary();
-   }*/
 }

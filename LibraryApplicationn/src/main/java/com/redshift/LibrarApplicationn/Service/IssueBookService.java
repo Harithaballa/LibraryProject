@@ -18,16 +18,16 @@ import com.redshift.LibrarApplicationn.Repo.MemberRepo;
 
 @Service
 public class IssueBookService {
-  
-	 @Autowired
-	  IssuedBookRepo issuedBookRepo;
-	  
+
+	@Autowired
+	IssuedBookRepo issuedBookRepo;
+
 	@Autowired
 	BookRepo bookrepo;
-	
+
 	@Autowired
-	  MemberRepo memberrepo;
-	
+	MemberRepo memberrepo;
+
 	@Autowired
 	IssueBookHelper helper;
 	private static Logger logger=Logger.getLogger(Library.class);
@@ -36,46 +36,46 @@ public class IssueBookService {
 	private int max;
 	public IssuedBooks addBooks(IssuedBooks issuedBooks)
 	{
-		 Book book=bookrepo.findById((issuedBooks.getBook().getBookid())).get();//(issuedBooks.getBook().getBookid());
-		  Member member=memberrepo.findById(issuedBooks.getMember().getMember_id()).get();
+		Book book=bookrepo.findById((issuedBooks.getBook().getBookid())).get();//(issuedBooks.getBook().getBookid());
+		Member member=memberrepo.findById(issuedBooks.getMember().getMember_id()).get();
 
-		  if(!book.isAvailable())
-		  {
-			  logger.info("Book is not available");
-			  Date date=helper.getCurrentDate(); 
-			  issuedBooks.setReservationDate(date);
-			  issuedBooks.setIssueDate(null);
-			  issuedBooks.setExipreDate(null);
-			  issuedBookRepo.save(issuedBooks);
-			  return new IssuedBooks();
-		  }
-		  else if(member.getIssuedList().contains((Object)book))
-		  {
-			  logger.info("already assigned");
-			  return new IssuedBooks();
+		if(!book.isAvailable())
+		{
+			logger.info("Book is not available");
+			Date date=helper.getCurrentDate(); 
+			issuedBooks.setReservationDate(date);
+			issuedBooks.setIssueDate(null);
+			issuedBooks.setExipreDate(null);
+			issuedBookRepo.save(issuedBooks);
+			return new IssuedBooks();
+		}
+		else if(member.getIssuedList().contains((Object)book))
+		{
+			logger.info("already assigned");
+			return new IssuedBooks();
 
-		  }
-		  else if(member.getIssuedList().size()>=max)
-		  {
-			  logger.info("Sorry u have already 2 books");
-			  return new IssuedBooks();
+		}
+		else if(member.getIssuedList().size()>=max)
+		{
+			logger.info("Sorry u have already 2 books");
+			return new IssuedBooks();
 
-		  }
-		  else if(book.getTotalNoOfBooks()-book.getNoOfIssuedBooks()==1)
-		  {
-			  logger.info("one Book is issued ");
-			  book.setAvailable(false);
-			  return helper.issueBook(issuedBooks, book, member);
-		  }
-		  else
-		  {
-			  logger.info("Books is issued");
-		      return helper.issueBook(issuedBooks, book, member);
-		  }
+		}
+		else if(book.getTotalNoOfBooks()-book.getNoOfIssuedBooks()==1)
+		{
+			logger.info("one Book is issued ");
+			book.setAvailable(false);
+			return helper.issueBook(issuedBooks, book, member);
+		}
+		else
+		{
+			logger.info("Books is issued");
+			return helper.issueBook(issuedBooks, book, member);
+		}
 	}
-	  public List<IssuedBooks>  getIssuedBookDetails()
-	  {
-		  return issuedBookRepo.findAll();
-	  }
+	public List<IssuedBooks>  getIssuedBookDetails()
+	{
+		return issuedBookRepo.findAll();
+	}
 }
 

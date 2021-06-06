@@ -24,12 +24,13 @@ public class BookController {
 	 @PostMapping("/createBook")
      public Book addBook(@RequestBody Book book)
      {
+		 
     	 return bookRepo.save(book);
      }
 	 @GetMapping("/getBookDetails")
 	 public List<Book> getBook()
 	 {
-		return bookRepo.findAll(); 
+		return bookRepo.getAllBooks(); 
 	 }
 	  @GetMapping("/getBooksDetailsInLibrary/{book_id}")
 	   public List<Library> getBooksInLibrary(@PathVariable int book_id)
@@ -82,8 +83,5 @@ public class BookController {
 		{
 		  return bookRepo.getNoOfBooksForPublisher();
 	    }*/
-		
-		
-
-		
+	
 }
