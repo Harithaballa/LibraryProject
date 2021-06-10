@@ -33,12 +33,18 @@ public class AddressCOntroller {
 	@Autowired
 	AddressService addressService;
 	private static Logger logger=Logger.getLogger(AddressCOntroller.class);
+	
+//	public AddressService addressService ;//=new AddressService();
+	
+//	public void setAddressService(AddressService addressService) {
+//		this.addressService = addressService;
+//	}
 
-   @GetMapping("/getAddress")
+@GetMapping("/getAddress")
    public List<Address> getAddress()
    {
 	   logger.info("getting address details");
-	   return addressRepo.findAll();
+	   return addressService.getAddress();
    }
    
    @PutMapping("/addAddress")
@@ -51,6 +57,7 @@ public class AddressCOntroller {
    @GetMapping("/getByIdAddress/{id}")
    public Address getByIdAddress(@PathVariable int id) throws InvalidIdException
    {
+	   logger.info("con");
 	  
 	   return addressService.getById(id);
 	  

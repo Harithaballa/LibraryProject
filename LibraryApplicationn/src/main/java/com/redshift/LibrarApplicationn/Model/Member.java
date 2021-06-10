@@ -1,5 +1,6 @@
 package com.redshift.LibrarApplicationn.Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +13,14 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+//import javax.validation.constraints.Email;
+//import javax.validation.constraints.NotBlank;
+//import javax.validation.constraints.NotEmpty;
+//import javax.validation.constraints.NotNull;
+//import javax.validation.constraints.Size;
 
 import org.apache.log4j.Logger;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 @Entity
@@ -23,7 +30,28 @@ public class Member {
 	 @GeneratedValue(strategy = GenerationType.AUTO )
      private int member_id;
 	 
+	// @Size(min=2 , max=30, message="{abc}")
+	 //@NotBlank(message="Enter a value for name")
+	 //@MemberName
      private String member_name;
+     
+	 //@NotBlank(message="Enter a value for email")
+	 //@Email
+	 private String email;
+	 
+	 //@NotNull(message="Enter a value for mobile Number")
+	 //@MobileNumber
+	 private String phoneNo;
+	 
+	 @DateTimeFormat(pattern="DD-MM-YYYY")
+	// @NotNull(message = "Please enter a date of birth")
+	 private LocalDate birthdayDate;
+	 
+	
+	// @NotNull(message = "Please enter age")
+	 @Age
+	 private int age;
+
      private String expirydate;
      
      @ManyToOne(cascade=CascadeType.MERGE,fetch = FetchType.EAGER)
@@ -83,5 +111,37 @@ public class Member {
       {
       	this.issuedList.add(issuedBooks);
       }
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
+	public LocalDate getBirthdayDate() {
+		return birthdayDate;
+	}
+
+	public void setBirthdayDate(LocalDate birthdayDate) {
+		this.birthdayDate = birthdayDate;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 	
 }

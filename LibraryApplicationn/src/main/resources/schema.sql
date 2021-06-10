@@ -26,3 +26,23 @@ price int,
 available boolean,
 publisher_id int,
 foreign key(publisher_id) references publisher(publisher_id));*/
+
+
+
+--create table users(username varchar(50) not null primary key,
+--password varchar(50) not null,
+--enable boolean not null);
+--
+--
+--
+--create table authorities(
+--username varchar(50) not null,
+--authority varchar(50) not null,
+--foreign key(username) references users(username)
+--);
+
+--create unique index id on authorities(username,authorities);
+--insert into users values('user','user',true);
+--insert into users values('admin','admin',true);
+--insert into authorities values('user','USER');
+--INSERT INTO authorities values('admin','admin');

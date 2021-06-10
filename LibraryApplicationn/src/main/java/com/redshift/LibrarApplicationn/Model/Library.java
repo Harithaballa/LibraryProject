@@ -22,7 +22,7 @@ public class Library {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "library_id")
-    private int id;
+	public int id;
     
     private String name;
     @OneToOne(mappedBy="lib" ,cascade = CascadeType.ALL)
@@ -39,7 +39,13 @@ public class Library {
     )
     private List<Book> booksEnrolled = new ArrayList<>();
 
-    @PrePersist
+    public Library()
+    {}
+    public Library(String name) {
+		this.name=name;
+	}
+
+	@PrePersist
     public void addChild() {
     	logger.debug("adding child");
         this.membersEnrolled.forEach(member -> {

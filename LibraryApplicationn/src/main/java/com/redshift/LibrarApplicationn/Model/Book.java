@@ -18,6 +18,7 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @Entity
+@Categy
 public class Book 
 {
 	    @JsonIgnore
@@ -28,8 +29,11 @@ public class Book
 	    @GeneratedValue(strategy = GenerationType.AUTO)
 	    private int bookid;
 	    
+	    @BookName(value="science")
 	    private String bookname;
 	    private String author;
+	    
+	    @Cost(price=100)
 	    private int price;
 	    private boolean available;
 	    
@@ -45,10 +49,31 @@ public class Book
 		@Column(name="total_no_of_books")
 		private int totalNoOfBooks;
 		
+		public Book(int bookid, String bookname, String author, int price, boolean available) {
+			super();
+			this.bookid = bookid;
+			this.bookname = bookname;
+			this.author = author;
+			this.price = price;
+			this.available = available;
+		}
+	
+		public Book() {
+			// TODO Auto-generated constructor stub
+		}
+
+		@Override
+		public String toString() {
+			return "Book [bookid=" + bookid + ", bookname=" + bookname + ", author=" + author + ", price=" + price
+					+ ", available=" + available + "]";
+		}
+
 		@Column(name="no_of_issued_books")
         private int NoOfIssuedBooks;
 		
-        public int getTotalNoOfBooks() {
+        
+
+		public int getTotalNoOfBooks() {
 			return totalNoOfBooks;
 		}
 

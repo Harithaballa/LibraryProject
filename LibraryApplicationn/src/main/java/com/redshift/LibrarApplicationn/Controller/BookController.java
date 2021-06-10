@@ -69,7 +69,9 @@ public class BookController {
 		@GetMapping("/priceLessThan/{price}")
 		public List<Book> priceLessThan(@PathVariable int price)
 		{
-			return bookRepo.priceLessThan(price);
+			List<Book> book=bookRepo.priceLessThan(price);
+			System.out.println(book);
+			return book;
 		}
         
 		@GetMapping("/priceInBetwenBooks/{price1}/{price2}")

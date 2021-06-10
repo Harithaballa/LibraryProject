@@ -10,12 +10,20 @@ public class Address
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO )
 	@Column(name="address_id")
-    private int address_id;
+	public int address_id;
     private String location;
     @OneToOne(cascade=CascadeType.MERGE,fetch = FetchType.EAGER)
     @JoinColumn(name = "library_id", referencedColumnName = "library_id")
     @JsonIgnore
     private Library lib;
+public Address(String location, Library library) {
+		// TODO Auto-generated constructor stub
+	this.location=location;
+	lib=library;
+	}
+public Address() {
+	// TODO Auto-generated constructor stub
+}
 public int getAddress_id() 
 {
    return address_id;
@@ -37,7 +45,12 @@ public Library getLib() {
 public void setLib(Library lib) {
 	this.lib = lib;
 }
-	
+@Override
+public String toString() {
+	return "Address [address_id=" + address_id + ", location=" + location + ", lib=" + lib + "]";
+}
+
+
 	
 
 	
