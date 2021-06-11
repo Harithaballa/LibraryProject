@@ -50,19 +50,19 @@ public class BookRepoImpl implements BookRepoCustom{
 		return jdbcTemplate.query(query,rowMapper);
 	}
 	
-	@Override
-	public List<Bookname> availableBooks() 
-	{
-		String query="select bookname from book  where available= true";
-		RowMapper<Bookname> rowMapper=(rs,rownum)->
-		{
-			Bookname bookname= new Bookname();
-			bookname.setBookname(rs.getString(1));
-			return bookname;
-		};
-		
-		return jdbcTemplate.query(query, rowMapper);
-	}
+//	@Override
+//	public List<Bookname> availableBooks() 
+//	{
+//		String query="select bookname from book  where available= true";
+//		RowMapper<Bookname> rowMapper=(rs,rownum)->
+//		{
+//			Bookname bookname= new Bookname();
+//			bookname.setBookname(rs.getString(1));
+//			return bookname;
+//		};
+//		
+//		return jdbcTemplate.query(query, rowMapper);
+//	}
 
 
 }

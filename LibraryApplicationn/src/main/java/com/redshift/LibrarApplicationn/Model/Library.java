@@ -20,7 +20,7 @@ import org.apache.log4j.Logger;
 @Entity
 public class Library {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    //@GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "library_id")
 	public int id;
     
@@ -45,6 +45,11 @@ public class Library {
 		this.name=name;
 	}
 
+	public Library(int i, String string) {
+		// TODO Auto-generated constructor stub
+		id=i;
+		name=string;
+	}
 	@PrePersist
     public void addChild() {
     	logger.debug("adding child");

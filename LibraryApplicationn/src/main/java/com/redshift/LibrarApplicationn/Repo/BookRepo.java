@@ -12,8 +12,8 @@ import com.redshift.LibrarApplicationn.Model.Book;
 @Repository
 public interface BookRepo extends JpaRepository<Book,Integer>,BookRepoCustom
 {
-    @Query("select B.author from Book B where B.author Like %:author%")
-    public List<Object>  getAuthor(@Param("author") String author);
+    @Query("select B from Book B where B.author Like %:author%")
+    public List<Book>  getAuthor(@Param("author") String author);
 	
 	@Query(value="select bookname from book  where available=true",nativeQuery =true )
     public List<Bookname> availableBooks();

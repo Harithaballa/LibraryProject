@@ -28,7 +28,7 @@ public class Member {
 	
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.AUTO )
-     private int member_id;
+     private int memberId;
 	 
 	// @Size(min=2 , max=30, message="{abc}")
 	 //@NotBlank(message="Enter a value for name")
@@ -37,20 +37,20 @@ public class Member {
      
 	 //@NotBlank(message="Enter a value for email")
 	 //@Email
-	 private String email;
+	// private String email;
 	 
 	 //@NotNull(message="Enter a value for mobile Number")
 	 //@MobileNumber
-	 private String phoneNo;
+	// private String phoneNo;
 	 
-	 @DateTimeFormat(pattern="DD-MM-YYYY")
+	// @DateTimeFormat(pattern="DD-MM-YYYY")
 	// @NotNull(message = "Please enter a date of birth")
-	 private LocalDate birthdayDate;
+	// private LocalDate birthdayDate;
 	 
 	
 	// @NotNull(message = "Please enter age")
-	 @Age
-	 private int age;
+	// @Age
+	// private int age;
 
      private String expirydate;
      
@@ -74,11 +74,11 @@ public class Member {
 	}
 
 	public int getMember_id() {
-		return member_id;
+		return memberId;
 	}
 
 	public void setMember_id(int member_id) {
-		this.member_id = member_id;
+		memberId = member_id;
 	}
 
 	public String getMember_name() {
@@ -112,36 +112,5 @@ public class Member {
       	this.issuedList.add(issuedBooks);
       }
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhoneNo() {
-		return phoneNo;
-	}
-
-	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
-	}
-
-	public LocalDate getBirthdayDate() {
-		return birthdayDate;
-	}
-
-	public void setBirthdayDate(LocalDate birthdayDate) {
-		this.birthdayDate = birthdayDate;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
-	}
 	
 }

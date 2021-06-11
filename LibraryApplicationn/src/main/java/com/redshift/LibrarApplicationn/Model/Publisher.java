@@ -22,7 +22,16 @@ public class Publisher {
     @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
     private List<Book> publishedBooks = new ArrayList<Book>();
     
-    public int getPublisher_id() {
+    public Publisher() {
+		
+	}
+
+	public Publisher(String publisher_name) {
+		// TODO Auto-generated constructor stub
+    	this.publisher_name=publisher_name;
+	}
+
+	public int getPublisher_id() {
         return publisher_id;
     }
 

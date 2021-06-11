@@ -62,6 +62,22 @@ public class Book
 			// TODO Auto-generated constructor stub
 		}
 
+		public Book(String bookname, String author, int price, boolean available) {
+			// TODO Auto-generated constructor stub
+			this.bookname = bookname;
+			this.author = author;
+			this.price = price;
+			this.available = available;
+		}
+
+		public Book(String bookname, String author, int price, boolean available,Publisher publisher) {
+			this.bookname = bookname;
+			this.author = author;
+			this.price = price;
+			this.available = available;
+			this.publisher=publisher;
+		}
+
 		@Override
 		public String toString() {
 			return "Book [bookid=" + bookid + ", bookname=" + bookname + ", author=" + author + ", price=" + price

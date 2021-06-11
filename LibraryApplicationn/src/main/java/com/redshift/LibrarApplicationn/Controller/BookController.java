@@ -55,7 +55,7 @@ public class BookController {
 			return bookRepo.save(book);
 		}
  		@GetMapping("/getAuthor/{author}")
-		public List<Object>  getAuthor(@PathVariable String author)
+		public List<Book>  getAuthor(@PathVariable String author)
 		{
 			return bookRepo.getAuthor(author);
 		}
@@ -80,10 +80,10 @@ public class BookController {
 			return bookRepo.priceInBetwenBooks(price1,price2);
 		}
 		
-		/*@GetMapping("/getNoOfBooksForPublisher")
-		public List<Object[]> getNoOfBooksForPublisher()
-		{
-		  return bookRepo.getNoOfBooksForPublisher();
-	    }*/
-	
+//		@GetMapping("/getNoOfBooksForPublisher")
+//		public List<Object[]> getNoOfBooksForPublisher()
+//		{
+//		  return bookRepo.getNoOfBooksForPublisher();
+//	    }
+//	
 }
