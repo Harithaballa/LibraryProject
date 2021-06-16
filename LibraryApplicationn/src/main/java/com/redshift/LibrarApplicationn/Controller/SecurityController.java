@@ -11,24 +11,36 @@ import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redshift.LibrarApplicationn.Model.AuthenticateRequest;
+import com.redshift.LibrarApplicationn.Model.AuthenticateResponse;
+import com.redshift.LibrarApplicationn.Model.JwtMethods;
 import com.redshift.LibrarApplicationn.Model.Member;
+import com.redshift.LibrarApplicationn.Model.MyUserDetailsService;
 import com.redshift.LibrarApplicationn.Repo.MemberRepo;
 
 @RestController
 public class SecurityController {
 	@Autowired
 	MemberRepo repo;
+	
+	@Autowired
+	AuthenticationManager manager;
+	
+	@Autowired
+	MyUserDetailsService userDetails;
 
-	//	@RequestMapping("/login")
-	//	public String login()
-	//	{
-	//		return "login";
-	//	}
-
+	@Autowired
+	JwtMethods jwt;
+	
 	@RequestMapping("/")
 	public String getAll()
 	{
@@ -59,5 +71,20 @@ public class SecurityController {
 			return  new ResponseEntity<List<Member>>(new ArrayList<Member>(),new HttpHeaders(),HttpStatus.OK);
 		}
 
+	}
+	
+	@PostMapping("/authenticate")
+	public ResponseEntity<?> authenticate(@RequestBody AuthenticateRequest request)
+	{
+		try 
+		{
+			manager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
+		} 
+		catch (Exception e) {
+		   new Exception("Invalid credentials"+e);
+		}
+		UserDetails   details=userDetails.loadUserByUsername(request.getUsername());
+		String token=jwt.generateToken(details);
+		return ResponseEntity.ok(new AuthenticateResponse(token));
 	}
 }

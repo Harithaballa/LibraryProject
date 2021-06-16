@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.redshift.LibrarApplicationn.Model.Book;
+import com.redshift.LibrarApplicationn.Model.Logg;
 import com.redshift.LibrarApplicationn.Model.Publisher;
 import com.redshift.LibrarApplicationn.Repo.BookRepo;
 import com.redshift.LibrarApplicationn.Repo.PublisherRepo;
@@ -24,6 +25,7 @@ public class PublisherController {
 	@Autowired
 	BookRepo bookrepo;
 	
+	@Logg
 	@PostMapping("/addPublisher")
    public Publisher addPublisher(@RequestBody Publisher  publisher)
    {

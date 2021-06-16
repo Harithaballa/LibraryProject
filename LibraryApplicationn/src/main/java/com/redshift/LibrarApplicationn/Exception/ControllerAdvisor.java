@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class ControllerAdvisor extends ResponseEntityExceptionHandler 
 {
 	
-	//private static Logger logger=Logger.getLogger( ControllerAdvisor.class);
+	private static Logger logger=Logger.getLogger( ControllerAdvisor.class);
 
 	@ExceptionHandler(EmptyFieldException.class)
 	//@ResponseStatus(value = )
@@ -39,8 +39,8 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
         body.put("message", "Invalid address id");
-
-        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
+        logger.info("advisor");
+        return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
    
