@@ -42,6 +42,18 @@ public class ControllerAdvisor extends ResponseEntityExceptionHandler
         logger.info("advisor");
         return new ResponseEntity<>(body, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    
+    @ExceptionHandler(CustomException.class)  
+    public ResponseEntity<Object> handleCustomException(CustomException ex, HttpServletRequest request) 
+    {
+      
+        Map<String, Object> body = new LinkedHashMap<>();
+        CustomError error=new CustomError(ex.getMessage(),HttpStatus.INTERNAL_SERVER_ERROR);
+        body.put("timestamp", LocalDateTime.now());
+        body.put("message", error.getMsg());
+        logger.info("advisor");
+        return new ResponseEntity<>(body, error.getStatus());
+    }
 
    
 }

@@ -1,60 +1,66 @@
 package com.redshift.LibrarApplicationn.Service;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import com.redshift.LibrarApplicationn.Exception.EmptyFieldException;
-import com.redshift.LibrarApplicationn.Exception.InvalidIdException;
+import com.redshift.LibrarApplicationn.Exception.CustomException;
 import com.redshift.LibrarApplicationn.Model.Book;
 import com.redshift.LibrarApplicationn.Repo.BookRepo;
 
+@Service
 public class BookService 
 {
 	@Autowired
 	BookRepo repo;
 	
-	@Autowired
-	BookHelper helper;
-	 public Book addBook(Book book) throws EmptyFieldException
-	  {
-		   try 
-		   {
-			   helper.handleBookException(book);
-			   return repo.save(book);
-		   } 
-		   catch (EmptyFieldException e) 
-		   {
-			  // System.out.println("Exception occured");
-			   throw new EmptyFieldException("Empty");
-		   }
-	  }
-	  public Book getById(int id) throws InvalidIdException
-	  {
-		   try
-		   {
-		      helper.handleIdException(id);
-		  
-		      return repo.findById(id).get();
-		 }
-		 catch(InvalidIdException a)
-		  {
-			 //  System.out.println("Exception occured");
-			 throw new InvalidIdException("hi");
-		   }
-	  }
-	  public void deleteAddresById(int id) throws InvalidIdException
-	  {
+	
+	private static Logger logger=Logger.getLogger( BookService.class);
 
-		   try
-		   {
-			   helper.handleIdException(id); 
-		      repo.deleteById(id);
-		  }
-		  catch(InvalidIdException a)
-		   {
-			   //System.out.println("Exception occured");
-				 throw new InvalidIdException("hi");
-
-		   }
-		  
+	
+//	 public Book addBook(Book book) throws EmptyFieldException
+//	  {
+//		   try 
+//		   {
+//			   helper.handleBookException(book);
+//			   return repo.save(book);
+//		   } 
+//		   catch (EmptyFieldException e) 
+//		   {
+//			  // System.out.println("Exception occured");
+//			   throw new EmptyFieldException("Empty");
+//		   }
+//	  }
+	  public Book getById(int id) throws CustomException
+	  {
+		  if(repo.existsById(id))
+			{
+				logger.info("getting address details using id");
+			}
+			else 
+			{
+				logger.error("Please enter correct value");
+				throw new CustomException("Please enter correct Book id");
+			}
+		
+	    
+	      return repo.findById(id).get();
+		   
 	  }
+//	  public void deleteAddresById(int id) throws InvalidIdException
+//	  {
+//
+//		   try
+//		   {
+//			   helper.handleIdException(id); 
+//		      repo.deleteById(id);
+//		  }
+//		  catch(InvalidIdException a)
+//		   {
+//			   //System.out.println("Exception occured");
+//				 throw new InvalidIdException("hi");
+//
+//		   }
+//		  
+//	  }
 }

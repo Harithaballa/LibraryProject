@@ -1,32 +1,6 @@
-2021-06-15 18:59:19 INFO com.redshift.LibrarApplicationn.Model.NewAspect:33 - controller is started
-2021-06-15 18:59:19 INFO com.redshift.LibrarApplicationn.Controller.AddressCOntroller:54 - con
-2021-06-15 18:59:19 ERROR com.redshift.LibrarApplicationn.Service.AddressService:63 - Please enter correct value
-2021-06-15 18:59:19 INFO com.redshift.LibrarApplicationn.Model.NewAspect:25 - aafter throwing method
-2021-06-15 18:59:19 INFO com.redshift.LibrarApplicationn.Model.NewAspect:39 - after method
-2021-06-15 18:59:19 INFO com.redshift.LibrarApplicationn.Exception.ControllerAdvisor:42 - advisor
-2021-06-15 19:00:36 INFO com.redshift.LibrarApplicationn.Model.NewAspect:33 - controller is started
-2021-06-15 19:00:36 INFO com.redshift.LibrarApplicationn.Controller.AddressCOntroller:54 - con
-2021-06-15 19:00:36 ERROR com.redshift.LibrarApplicationn.Service.AddressService:63 - Please enter correct value
-2021-06-15 19:00:36 INFO com.redshift.LibrarApplicationn.Model.NewAspect:25 - aafter throwing method
-2021-06-15 19:00:36 INFO com.redshift.LibrarApplicationn.Model.NewAspect:39 - after method
-2021-06-15 19:00:36 INFO com.redshift.LibrarApplicationn.Exception.ControllerAdvisor:42 - advisor
-2021-06-15 19:01:48 INFO com.redshift.LibrarApplicationn.Model.NewAspect:33 - controller is started
-2021-06-15 19:01:48 INFO com.redshift.LibrarApplicationn.Controller.AddressCOntroller:54 - con
-2021-06-15 19:01:48 ERROR com.redshift.LibrarApplicationn.Service.AddressService:63 - Please enter correct value
-2021-06-15 19:01:48 INFO com.redshift.LibrarApplicationn.Model.NewAspect:25 - aafter throwing method
-2021-06-15 19:01:48 INFO com.redshift.LibrarApplicationn.Model.NewAspect:39 - after method
-2021-06-15 19:01:48 INFO com.redshift.LibrarApplicationn.Exception.ControllerAdvisor:42 - advisor
-2021-06-15 19:02:08 INFO com.redshift.LibrarApplicationn.Model.NewAspect:33 - controller is started
-2021-06-15 19:02:08 INFO com.redshift.LibrarApplicationn.Controller.AddressCOntroller:54 - con
-2021-06-15 19:02:08 ERROR com.redshift.LibrarApplicationn.Service.AddressService:63 - Please enter correct value
-2021-06-15 19:02:08 INFO com.redshift.LibrarApplicationn.Model.NewAspect:25 - aafter throwing method
-2021-06-15 19:02:08 INFO com.redshift.LibrarApplicationn.Model.NewAspect:39 - after method
-2021-06-15 19:02:08 INFO com.redshift.LibrarApplicationn.Exception.Controller										5rAdvisor:42 - advisor
-2021-06-15 19:03:38 INFO com.redshift.LibrarApplicationn.Model.NewAspect:33 - controller is started
-2021-06-15 19:03:38 INFO com.redshift.LibrarApplicationn.Controller.AddressCOntroller:54 - con
-2021-06-15 19:03:38 ERROR com.redshift.LibrarApplicationn.Service.AddressService:63 - Please enter correct value
-2021-06-15 19:03:38 INFO com.redshift.LibrarApplicationn.Model.NewAspect:25 - aafter throwing method
-2021-06-15 19:03:38 INFO com.redshift.LibrarApplicationn.Model.NewAspect:39 - after method
-2021-06-15 19:03:38 INFO com.redshift.LibrarApplicationn.Exception.ControllerAdvisor:42 - advisor
-2021-06-15 19:29:26 INFO com.redshift.LibrarApplicationn.Model.LogFact:33 - method invoked class com.redshift.LibrarApplicationn.Controller.PublisherController:addPublisher()args: [{"publisher_id":0,"publisher_name":"suma","publishedBooks":[]}]
-2021-06-15 19:29:26 INFO com.redshift.LibrarApplicationn.Model.LogFact:35 - class com.redshift.LibrarApplicationn.Controller.PublisherController:addPublisher()Return value{"publisher_id":101,"publisher_name":"suma","publishedBooks":[]}
+2021-06-17 15:49:04 INFO com.redshift.LibrarApplicationn.Model.NewAspect:33 - controller is started
+2021-06-17 15:49:04 INFO com.redshift.LibrarApplicationn.Controller.AddressCOntroller:57 - con
+2021-06-17 15:49:04 ERROR com.redshift.LibrarApplicationn.Service.AddressService:60 - Please enter correct value
+2021-06-17 15:49:04 INFO com.redshift.LibrarApplicationn.Model.NewAspect:25 - aafter throwing method
+2021-06-17 15:49:04 INFO com.redshift.LibrarApplicationn.Model.NewAspect:39 - after method
+2021-06-17 15:49:04 INFO com.redshift.LibrarApplicationn.Exception.ControllerAdvisor:54 - advisor

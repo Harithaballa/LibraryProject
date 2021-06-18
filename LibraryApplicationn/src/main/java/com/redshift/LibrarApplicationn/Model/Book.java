@@ -40,6 +40,8 @@ public class Book
 	    @ManyToOne(cascade = CascadeType.MERGE)
 	    @JoinColumn(name = "publisher_id", referencedColumnName = "publisher_id")
 	    @JsonIgnoreProperties({"publishedBooks"})
+	//	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"}) 
+
 	    private Publisher publisher;
        
 		@OneToMany(mappedBy = "book",cascade = CascadeType.ALL,fetch = FetchType.EAGER)

@@ -6,8 +6,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.redshift.LibrarApplicationn.Exception.CustomException;
 import com.redshift.LibrarApplicationn.Exception.EmptyFieldException;
-import com.redshift.LibrarApplicationn.Exception.InvalidIdException;
 import com.redshift.LibrarApplicationn.Model.Address;
 import com.redshift.LibrarApplicationn.Repo.AddressRepo;
 
@@ -47,13 +47,9 @@ public class AddressService {
 		   throw new EmptyFieldException("Empty");
 	   }
   }
-  public Address getById(int id) throws InvalidIdException
+  public Address getById(int id) throws CustomException
   {
-	 // Address addr=null;
-	   try
-	   {
-		 //  AddressHelper helper=new AddressHelper();
-	    //  helper.handleIdException(id);
+	
 	      if(repo.existsById(id))
 			{
 				logger.info("getting address details using id");
@@ -61,24 +57,19 @@ public class AddressService {
 			else 
 			{
 				logger.error("Please enter correct value");
-				throw new InvalidIdException("Please enter correct address id");
+				throw new CustomException("Please enter correct address id");
 			}
 		
 	    
 	      return repo.findById(id).get();
-	 }
-	 catch(InvalidIdException a)
-	  {
-		 //  System.out.println("Exception occured");
-		 throw new InvalidIdException("hi");
-	   }
-  }
-  public void deleteAddresById(int id) throws InvalidIdException
-  {
 
-	   try
-	   {
-		   //helper.handleIdException(id); 
+  }
+  public void deleteAddresById(int id) throws CustomException
+  {
+//
+//	   try
+//	   {
+//		   //helper.handleIdException(id); 
 		   if(repo.existsById(id))
 			{
 				logger.info("getting address details using id");
@@ -86,17 +77,18 @@ public class AddressService {
 			else 
 			{
 				logger.error("Please enter correct value");
-				throw new InvalidIdException("Please enter correct address id");
+				throw new CustomException("Please enter correct address id");
 			}
 	        repo.deleteById(id);
-	  }
-	  catch(InvalidIdException a)
-	   {
-		   //System.out.println("Exception occured");
-			 throw new InvalidIdException("hi");
-
-	   }
-	  
+//	  }
+//	  catch(CustomException a)
+//	   {
+//		   //System.out.println("Exception occured");
+//		   logger.error("Custom exception");
+//		   throw new CustomException("hi");
+//
+//	   }
+//	  
   }
   public List<Address> getAddress()
   {

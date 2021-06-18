@@ -12,15 +12,20 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redshift.LibrarApplicationn.Exception.CustomException;
 import com.redshift.LibrarApplicationn.Model.Book;
 import com.redshift.LibrarApplicationn.Model.Library;
 import com.redshift.LibrarApplicationn.Repo.BookRepo;
 import com.redshift.LibrarApplicationn.Repo.Bookname;
+import com.redshift.LibrarApplicationn.Service.BookService;
 
 @RestController
 public class BookController {
 	 @Autowired
 	 BookRepo bookRepo;
+	 
+	 @Autowired
+	 BookService serv;
 	 @PostMapping("/createBook")
      public Book addBook(@RequestBody Book book)
      {
@@ -39,9 +44,9 @@ public class BookController {
 	    	return book.getLibrariesInfo();
 	    }
 	  @GetMapping("/getBookById/{id}")
-		public Book getBoookById(@PathVariable String id )
+		public Book getBoookById(@PathVariable int id ) throws CustomException
 		{
-			return bookRepo.getById(Integer.parseInt(id));
+			return  serv.getById(id);
 		}
 		
 		@DeleteMapping("/deleteBookById/{id}")

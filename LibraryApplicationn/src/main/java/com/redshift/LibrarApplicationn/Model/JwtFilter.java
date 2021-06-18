@@ -17,8 +17,6 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import io.jsonwebtoken.ExpiredJwtException;
-
 
 @Component
 public class JwtFilter  extends OncePerRequestFilter{
@@ -33,7 +31,7 @@ public class JwtFilter  extends OncePerRequestFilter{
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
 			throws ServletException, IOException {
-//
+
 		final String header = request.getHeader(HttpHeaders.AUTHORIZATION);
 		if (header=="" || !header.startsWith("Bearer ")) {
 			chain.doFilter(request, response);

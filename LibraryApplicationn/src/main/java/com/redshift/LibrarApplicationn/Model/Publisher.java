@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 @Entity
 public class Publisher {
@@ -18,8 +20,29 @@ public class Publisher {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int publisher_id;
     private String publisher_name;
+    private String createdBy; 
+    private String updatedBy;
     
-    @OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
+    
+    
+    public String getCreatedBy() {
+		return createdBy;
+	}
+
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+
+	public String getUpdatedBy() {
+		return updatedBy;
+	}
+
+	public void setUpdatedBy(String updatedBy) {
+		this.updatedBy = updatedBy;
+	}
+
+	@OneToMany(mappedBy = "publisher", cascade = CascadeType.ALL)
+
     private List<Book> publishedBooks = new ArrayList<Book>();
     
     public Publisher() {

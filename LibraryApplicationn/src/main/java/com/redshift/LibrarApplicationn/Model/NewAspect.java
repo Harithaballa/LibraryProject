@@ -20,7 +20,7 @@ public class NewAspect {
 	public void start() {}
 	
 	@AfterThrowing(pointcut = "start()" ,throwing = "ex")
-	public void demo(InvalidIdException ex)
+	public void demo(Exception ex)
 	{
 		logger.info("aafter throwing method");
 		

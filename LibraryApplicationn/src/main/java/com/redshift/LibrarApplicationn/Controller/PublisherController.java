@@ -3,6 +3,8 @@ package com.redshift.LibrarApplicationn.Controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,13 +27,32 @@ public class PublisherController {
 	@Autowired
 	BookRepo bookrepo;
 	
-	@Logg
+	@Logg(enable=true)
 	@PostMapping("/addPublisher")
    public Publisher addPublisher(@RequestBody Publisher  publisher)
    {
-		
+		Object principal= SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if(principal instanceof UserDetails)
+			publisher.setCreatedBy(((UserDetails)principal).getUsername());
+		else {
+			publisher.setCreatedBy(principal.toString());
+		}
 	   return repo.save(publisher); 
    }
+
+  @PostMapping("/updatePublisher")
+  public Publisher update(@RequestBody Publisher  publisher)
+  {
+	  Object principal= SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if(principal instanceof UserDetails)
+			publisher.setUpdatedBy(((UserDetails)principal).getUsername());
+		else {
+			publisher.setUpdatedBy(principal.toString());
+		}
+	   return repo.save(publisher); 
+  }
+	
+	
    @GetMapping("/getPublisher")
    public List<Publisher> getPublisher()
    {
@@ -59,7 +80,14 @@ public class PublisherController {
    @PutMapping("/addBookToPublisher/{publisher_id}/{bookid}")
    public Publisher addBookToPublisher(@PathVariable int publisher_id, @PathVariable int bookid)
    {
+	//   Object principal= SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 	   Publisher publisher=repo.getById(publisher_id);
+//		if(principal instanceof UserDetails)
+//			publisher.setUpdatedBy(((UserDetails)principal).getUsername());
+//		else {
+//			publisher.setUpdatedBy(principal.toString());
+//		}
+	   
 	   Book book=bookrepo.getById(bookid);
 	   publisher.getPublishedBooks().add(book);
 	   return publisher;

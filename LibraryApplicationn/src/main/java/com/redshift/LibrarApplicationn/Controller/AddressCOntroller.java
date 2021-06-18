@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.redshift.LibrarApplicationn.Exception.CustomException;
 import com.redshift.LibrarApplicationn.Exception.EmptyFieldException;
 import com.redshift.LibrarApplicationn.Exception.InvalidIdException;
 import com.redshift.LibrarApplicationn.Model.Address;
 import com.redshift.LibrarApplicationn.Model.Demo;
+import com.redshift.LibrarApplicationn.Model.Logg;
 import com.redshift.LibrarApplicationn.Repo.AddressRepo;
 import com.redshift.LibrarApplicationn.Service.AddressHelper;
 import com.redshift.LibrarApplicationn.Service.AddressService;
@@ -48,8 +50,9 @@ public class AddressCOntroller
 	}
 
 	@Demo
+	@Logg
 	@GetMapping("/getByIdAddress/{id}")
-	public Address getByIdAddress(@PathVariable int id) throws InvalidIdException
+	public Address getByIdAddress(@PathVariable int id) throws CustomException
 	{
 		logger.info("con");
 
@@ -58,7 +61,7 @@ public class AddressCOntroller
 	}
 
 	@DeleteMapping("/deleteAddressById/{id}")
-	public void deleteAddressById(@PathVariable int id) throws InvalidIdException
+	public void deleteAddressById(@PathVariable int id) throws CustomException
 	{
 		addressService.deleteAddresById(id);
 	}
